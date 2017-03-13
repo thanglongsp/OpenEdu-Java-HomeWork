@@ -1,0 +1,58 @@
+package com.example.hp.myapplication;
+
+import java.util.Scanner;
+import java.lang.String;
+
+/**
+ * Created by hp on 3/14/2017.
+ */
+
+public class javaBasicDay3_String_btvn {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your string!");
+        String s = scanner.nextLine();
+        int count = 0;
+        for (int i = 0; i < s.length(); i++)
+            if (s.charAt(i) == 'a' || s.charAt(i) == 'A') {
+                count += 1;
+            }
+        System.out.println("So la xuat hien cua ky tu 'a' trong xau s la: " + count);
+        count = 0;
+        for (int i = 0; i < s.length(); i++)
+            if (s.charAt(i) != ' ') {
+                count += 1;
+            }
+        System.out.println("So ky tu trong s la: " + count);
+        String Ho[] = s.split(" ");
+        System.out.format("%s\n", Ho[0]);
+        System.out.format("%d\n", Ho[0].length());
+        if (Ho[0].equals("doan") == true) {
+            System.out.println("True!");
+        } else System.out.println("False!");
+        s = "_                     Nguyễn Thăng               Long";
+        int dem = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ') {
+                System.out.print(s.charAt(i));
+                dem = 0;
+            }
+            if (s.charAt(i) == ' ' && ++dem < 2) {
+                System.out.print(s.charAt(i));
+                dem += 1;
+            }
+        }
+
+    }
+}
+/*
+ hàm split cắt xâu thành các mảng tring, trong đó mỗi chuỗi con được cắt ra được coi là một phần tử của mảng đó:
+ ví dụ: Nguyễn thăng long được cắt bởi dấu cách, thì sẽ thành một mảng có arr[0] = "Nguyễn"  arr[1]= "thăng"   arr[3] = "long"
+  */
+
+/*
+- nhập vào xâu str từ bàn phím, kiểm tra xem trong xâu có bao nhiêu chữ a
+- Kiểm tra xem xâu có bao nhiêu từ
+- Nhập vào tên của một người, kiểm tra Họ của người đó có phải là Doan ko
+- Xóa các kí tự space đầu và cuối trong 1 xâu, giữa các từ trong xâu chỉ có 1 space.
+ */
